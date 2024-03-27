@@ -19,7 +19,7 @@
   padding: 1vh 2vh;
   font-size: 12px;
 }
-.ekart--top--bar{
+/* .ekart--top--bar{
   width:auto;
   text-align: right;
   padding-top: 3px;
@@ -35,11 +35,11 @@
   font-size: 16px;
   width:70%;
   text-align: center;
-}
+} */
 .ekart--bottom--bar{
   display: flex;
 }
-.ekart--search-bar{
+/* .ekart--search-bar{
   padding: 0 3vh;
 }
 .ekart-search-box{
@@ -48,18 +48,18 @@
   border: none;
   background-color: #efefef;
   padding: 2px 10px;
-}
+} */
 a{
   text-decoration: none;
   padding: 0 10px;
 }
-.ekart--search--btn{
+/* .ekart--search--btn{
   width: 33px;
   height: 33px;
   border: none;
   background-color: #efefef;
   margin-left: -5px;
-}
+} */
 
 .btn{
   padding: 15px 25px;
