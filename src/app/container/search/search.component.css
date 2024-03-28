@@ -14,8 +14,10 @@
 
 
 .btn{
-  padding: 5px 10px;
+  padding: 1px 10px;
+  height: 5.5vh;
   border: none;
+  border-radius: 0 10px 10px 0;
 }
 .btn-search{
   padding: 12px 30px;
