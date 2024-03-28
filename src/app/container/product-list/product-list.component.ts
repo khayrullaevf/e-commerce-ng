@@ -533,4 +533,8 @@ export class ProductListComponent {
     }
   ];
 
+totalProdCount=this.products.length
+inStock=this.products.filter(item=>item.is_in_inventory!==false).length
+outOfStock=this.products.filter(item=>item.is_in_inventory==false).length
+
 }
