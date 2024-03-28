@@ -14,8 +14,10 @@
 
 
 .btn{
-  padding: 5px 10px;
+  padding: 12px 30px;
+  height: 5.5vh;
   border: none;
+  border-radius: 0 10px 10px 0;
 }
 .btn-search{
   padding: 12px 30px;
@@ -23,7 +25,14 @@
   margin-left: -5px;
   color:#fff;
 }
-
+.btn-search-disabled{
+  padding: 12px 30px;
+  background-color: #aaa;
+  margin-left: -5px;
+  color:#999;
+  border: #aaa 1px solid;
+  cursor: not-allowed;
+}
 .ekart-search-result-for{
   margin: 20px auto;
   padding: 10px 140px;
