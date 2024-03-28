@@ -7,6 +7,16 @@ import { Component } from '@angular/core';
 })
 export class ProductListComponent {
   // name:string='John Doe'
+
+
+  listOfnames:string[]=[
+    'Mark',
+    'Paul',
+    'Frank'
+  ]
+
+
+
   addToCart: number = 0;
   product = {
     name: 'Iphone 14',
