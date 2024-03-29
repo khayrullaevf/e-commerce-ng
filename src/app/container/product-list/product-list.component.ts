@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-product-list',
@@ -533,6 +533,10 @@ export class ProductListComponent {
     }
   ];
 
+
+
+@Input() searchText:string //from container component
+
 totalProdCount=this.products.length
 inStock=this.products.filter(item=>item.is_in_inventory!==false).length
 outOfStock=this.products.filter(item=>item.is_in_inventory==false).length
@@ -551,23 +555,38 @@ onFilterChanged(value:string){
 }
 
 applyFilter(product: any): boolean {
+  // Apply  filters
   switch (this.seletedFilterRadioButton) {
     case 'All':
-      return true;
+      break; // No filtering needed for 'All'
     case 'true':
-      return product.is_in_inventory === true;
+      if (!product.is_in_inventory) return false;
+      break;
     case 'false':
-      return product.is_in_inventory === false;
+      if (product.is_in_inventory) return false;
+      break;
     case 'men':
-      return product.gender === 'MEN';
+      if (product.gender !== 'MEN') return false;
+      break;
     case 'women':
-      return product.gender === 'WOMEN';
-    case 'discount':
-        return product.discountPrice!==undefined;
+      if (product.gender !== 'WOMEN') return false;
+      break;
     default:
-      return true;
+      break;
   }
+
+  // Apply search filter
+  if (this.searchText && this.searchText.trim() !== '') {
+    const productName = product.name.toLowerCase();
+    const searchQuery = this.searchText.toLowerCase();
+    if (!productName.includes(searchQuery)) {
+      return false;
+    }
+  }
+
+  return true; // Show the product if it passes all filters
 }
+
 
 
 }
