@@ -6,6 +6,12 @@ import { Component, Input, Output } from '@angular/core';
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
+
+  selectedProduct=undefined
+
+
+
+
   products = [
     {
       id: 1,
