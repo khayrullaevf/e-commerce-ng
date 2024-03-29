@@ -1,9 +1,18 @@
 <app-filter
- [all]="totalProdCount"
-  [inStock]="inStock"
-  [outOfStock]="outOfStock">
+[all]="totalProdCount"
+[inStock]="inStock"
+[outOfStock]="outOfStock"
+[men]="men"
+[women]="women"
+[discount]="discount"
+
+(seletedFilterRadioButtonChanged)="onFilterChanged($event)">
+
 </app-filter>
 <div class="ekart--products--container">
-<app-product *ngFor="let prod of products" [product]="prod"></app-product>
+  <div  *ngFor="let prod of products">
+  <!-- <app-product [product]="prod"  *ngIf="seletedFilterRadioButton==='All'||prod.gender.toLowerCase().includes(seletedFilterRadioButton)" > </app-product> -->
+  <app-product [product]="prod"  *ngIf="applyFilter(prod)" > </app-product>
+  </div>
 </div>
 
