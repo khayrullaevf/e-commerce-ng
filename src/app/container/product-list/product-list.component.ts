@@ -571,6 +571,9 @@ applyFilter(product: any): boolean {
     case 'women':
       if (product.gender !== 'WOMEN') return false;
       break;
+      case 'discount':
+        if (!product.discountPrice&&product.discountPrice===undefined) return false;
+        break;
     default:
       break;
   }

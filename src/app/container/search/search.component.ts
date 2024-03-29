@@ -15,18 +15,12 @@ export class SearchComponent {
 
 @Output() searchTextChanged:EventEmitter<string>=new EventEmitter<string>()
 
-updateSearchText(event:any){
-this.searchText=event.target.value
-// this.onSearchTextChanged.emit(this.searchText)
-// console.log('hoi');
+updateSearchText(event:HTMLInputElement){
+this.searchText=event.value
+this.searchTextChanged.emit(event.value)
 
 }
-onSearchTextChanged(event:any){
-  this.searchText=event.target.value
-  this.searchTextChanged.emit(event.target.value)
-   console.log(event.target.value);
 
-}
 
 }
 
