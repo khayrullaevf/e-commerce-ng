@@ -1,10 +1,46 @@
 <div class="filter-container">
-  <input type="radio" name="filter" value="All" />
+  <input
+  type="radio"
+   name="filter"
+   value="All"
+  [(ngModel)]="seletedFilterRadioButton"
+  (change)="onSeletedFilterRadioButtonChanged($event)"/>
   <span>{{'All ('+all+')'}}</span>
 
-  <input type="radio" name="filter" value="true" />
+  <input
+   type="radio"
+   name="filter"
+   value="true"
+   [(ngModel)]="seletedFilterRadioButton"
+  (change)="onSeletedFilterRadioButtonChanged($event)"/>
   <span>{{'In Stock ('+inStock+')'}}</span>
 
-  <input type="radio" name="filter" value="false" />
+  <input
+  type="radio"
+  name="filter"
+  value="false"
+  [(ngModel)]="seletedFilterRadioButton"
+  (change)="onSeletedFilterRadioButtonChanged($event)"/>
   <span>{{'Out Of Stock ('+outOfStock+')'}}</span>
+  <input
+  type="radio"
+  name="filter"
+  value="men"
+  [(ngModel)]="seletedFilterRadioButton"
+  (change)="onSeletedFilterRadioButtonChanged($event)"/>
+  <span>{{'Men ('+men+')'}}</span>
+  <input
+  type="radio"
+  name="filter"
+  value="women"
+  [(ngModel)]="seletedFilterRadioButton"
+  (change)="onSeletedFilterRadioButtonChanged($event)"/>
+  <span>{{'Women ('+women+')'}}</span>
+  <input
+  type="radio"
+  name="filter"
+  value="discount"
+  [(ngModel)]="seletedFilterRadioButton"
+  (change)="onSeletedFilterRadioButtonChanged($event)"/>
+  <span>{{'Discount ('+discount+')'}}</span>
 </div>

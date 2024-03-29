@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 
 @Component({
   selector: 'app-product-list',
@@ -536,5 +536,38 @@ export class ProductListComponent {
 totalProdCount=this.products.length
 inStock=this.products.filter(item=>item.is_in_inventory!==false).length
 outOfStock=this.products.filter(item=>item.is_in_inventory==false).length
+men=this.products.filter(item=>item.gender.includes('MEN')).length
+women=this.products.filter(item=>item.gender.includes('WOMEN')).length
+discount=this.products.filter(item=>item.discountPrice!==undefined).length
+
+seletedFilterRadioButton:string='All'
+
+onFilterChanged(value:string){
+ this.seletedFilterRadioButton=value
+ console.log( value);
+ console.log(this.men);
+ console.log(this.women);
+
+}
+
+applyFilter(product: any): boolean {
+  switch (this.seletedFilterRadioButton) {
+    case 'All':
+      return true;
+    case 'true':
+      return product.is_in_inventory === true;
+    case 'false':
+      return product.is_in_inventory === false;
+    case 'men':
+      return product.gender === 'MEN';
+    case 'women':
+      return product.gender === 'WOMEN';
+    case 'discount':
+        return product.discountPrice!==undefined;
+    default:
+      return true;
+  }
+}
+
 
 }

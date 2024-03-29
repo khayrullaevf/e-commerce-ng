@@ -6,3 +6,8 @@ input[type=radio]{
   margin-left:10px;
   margin-right:5px;
 }
+
+
+span{
+  font-size: 0.9rem;
+}
