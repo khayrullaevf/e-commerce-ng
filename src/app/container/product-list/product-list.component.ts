@@ -1,4 +1,5 @@
 import { Component, Input, Output } from '@angular/core';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'app-product-list',
@@ -7,12 +8,12 @@ import { Component, Input, Output } from '@angular/core';
 })
 export class ProductListComponent {
 
-  selectedProduct=undefined
+ selectedProduct:Product
 
 
 
 
-  products = [
+  products:Product[] = [
     {
       id: 1,
       name: "Nike React Infinity Run Flyknit",
