@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Product } from '../../models/product';
+import { ProductListComponent } from '../product-list/product-list.component';
 
 @Component({
   selector: 'app-product-detail',
@@ -8,7 +9,18 @@ import { Product } from '../../models/product';
 })
 export class ProductDetailComponent {
 
-  @Input() selectedProduct:Product
+  @Input() productListComp:ProductListComponent=undefined
+  product:Product
 
+
+
+  ngOnInit() {
+    this.product=this.productListComp.selectedProduct
+  }
+
+  onClose(){
+    console.log(this.product);
+
+  }
 
 }
