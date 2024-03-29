@@ -10,7 +10,7 @@
 
 </app-filter>
 <div class="ekart--products--container">
-  <div  *ngFor="let prod of products">
+  <div  *ngFor="let prod of products" (click)="selectedProduct=prod">
   <!-- <app-product [product]="prod"  *ngIf="seletedFilterRadioButton==='All'||prod.gender.toLowerCase().includes(seletedFilterRadioButton)" > </app-product> -->
   <app-product [product]="prod"  *ngIf="applyFilter(prod)" > </app-product>
   </div>

@@ -1,0 +1,56 @@
+<div class="ekart--product--details--info scroll">
+  <div class="ekart-product-detail-close">
+      <i class="fa fa-times" aria-hidden="true" (click)="onClose()"></i>
+  </div>
+  <div class="ekart-product-detail-image">
+      <img [src]="product.imageURL" class="ekart-product-detail-image">
+  </div>
+
+  <div class="ekart-product-detail">
+      <div class="ekart-product-detail-name">
+          <h2>{{product.name}}</h2>
+      </div>
+      <div class="ekart-product-detail-gbc">
+          <span >{{product.gender}}</span>
+          <span>{{product.brand}}</span>
+          <span>{{product.category}}</span>
+      </div>
+      <div class="ekart-product-detail-price">
+          <p>
+              <b>Price Each Pair:</b>
+              <span style="background-color: red; color:white"  [ngStyle]="product.discountPrice && {'text-decoration': ' line-through'}">${{product.price}}</span>
+              <span *ngIf="product.discountPrice" style="background-color: green; color:white">${{product.discountPrice}}  (Inclusive of all taxes)</span>
+          </p>
+      </div>
+      <div class="ekart-product-detail-size">
+          <div style="padding: 5px 0px;border-bottom: #ccc 2px solid">
+              <h4>Available Size</h4>
+          </div>
+          <diV style="margin-top: 20px" >
+              <span class="ekart-product-detail-available-size" *ngFor="let s of product.size">{{s}}</span>
+          </diV>
+      </div>
+
+      <div class="ekart-product-detail-color">
+          <div style="padding: 5px 0px;border-bottom: #ccc 2px solid">
+              <h4>Available Color</h4>
+          </div>
+          <diV style="margin-top: 20px;">
+              <span class="ekart-product-detail-available-color"   *ngFor="let i of product.color" [style.backgroundColor]="i.toLowerCase().trim()"></span>
+          </diV>
+      </div>
+
+      <div class="ekart-product-detail-desc">
+          <div style="padding: 5px 0px;border-bottom: #ccc 2px solid">
+              <h4>Product Description</h4>
+          </div>
+          <div style="margin-top: 20px">
+              <p>{{product.description}}</p>
+          </div>
+      </div>
+  </div>
+  <div class="ekart-product-detail-addtoCart">
+      <button class="btn-add-to-cart">ADD TO CART</button>
+  </div>
+</div>
+<div class="overlay"></div>
