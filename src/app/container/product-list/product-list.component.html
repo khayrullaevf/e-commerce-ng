@@ -10,7 +10,7 @@
 
 </app-filter>
 <div class="ekart--products--container">
-  <ng-container  *ngFor="let prod of products" >
+  <ng-container appHighlight  *ngFor="let prod of products" >
   <app-product
   [product]="prod"
   *ngIf="applyFilter(prod)"
