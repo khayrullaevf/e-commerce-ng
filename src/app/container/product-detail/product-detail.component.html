@@ -1,4 +1,4 @@
-<div class="ekart--product--details--info scroll" >
+<div class="ekart--product--details--info scroll"  [disableProduct]="!product.is_in_inventory">
   <div class="ekart-product-detail-close">
       <i class="fa fa-times" aria-hidden="true" (click)="onClose()"></i>
   </div>
