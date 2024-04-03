@@ -1,4 +1,4 @@
-<div class="ekart--product--details--info scroll" >
+<div class="ekart--product--details--info scroll"  [disableProduct]="!product.is_in_inventory">
   <div class="ekart-product-detail-close">
       <i class="fa fa-times" aria-hidden="true" (click)="onClose()"></i>
   </div>
@@ -11,9 +11,9 @@
           <h2>{{product.name}}</h2>
       </div>
       <div class="ekart-product-detail-gbc">
-          <span setBackground >{{product.gender}}</span>
-          <span setBackground>{{product.brand}}</span>
-          <span setBackground >{{product.category}}</span>
+          <span  [setBackground]="{backColor:'red', textColor:'white'}" >{{product.gender}}</span>
+          <span  [setBackground]="{backColor:'#28282b', textColor:'white'}">{{product.brand}}</span>
+          <span [setBackground]="{backColor:'pink', textColor:'blue'}">{{product.category}}</span>
       </div>
       <div class="ekart-product-detail-price" >
           <p>
